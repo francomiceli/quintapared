@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate.ejs') %>
+
+<% for (let redactor of redactors) { %>
+<div class="container">
+	<ul>		
+<div class="card mt-3 mb-3" style="max-width: 540px;">
+  <div class="row gy-5">
+    <div class="col-md-4">
+      <img src="https://i.ytimg.com/vi/czicjXRQO50/hqdefault.jpg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= redactor.nombre %></h5>
+        <p class="card-text"><%= redactor.descripcion %>.</p>        
+      </div>
+    </div>
+  </div>
+</div>
+</ul>
+</div>
+<% } %>

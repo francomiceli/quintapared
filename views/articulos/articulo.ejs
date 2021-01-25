@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate.ejs') %>
+
+<div class="container">
+	<div class="row">
+    	<div class="col-lg-8">
+			<figure class="notaportada">
+				<button class="mt-4"><%= articulo.seccion %></button>	
+			</figure>
+			<h1 class="mt-4 mb-4"><%= articulo.titulo %></h1>				
+			<img class="img-fluid" src="https://i.ytimg.com/vi/czicjXRQO50/hqdefault.jpg"/>
+			<h5 class="mt-4 mb-4 fst-italic">Por <%= articulo.autor %></h5>
+			<p class="lh-lg"><%= articulo.contenido %></p>
+		</div>
+		<div class="col-lg-4">
+			<section>
+				<div class="header">    
+    				<h4> Otras lecturas </h4>
+  				</div>
+  				<div id="content">
+					<% for (let articulo of articulos) { %>
+    					<!-- <div class="object"> -->
+      						<figure class="object notaportada">
+      								<h5 class="context"><%= articulo.titulo %></h5>
+									<div class="context fst-italic">Por <%= articulo.autor %></div>	
+									<a href="/articulo/<%= articulo._id %>"></a>
+							</figure>
+						<!-- </div> -->
+					<% } %>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

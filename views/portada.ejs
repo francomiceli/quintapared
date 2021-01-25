@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate.ejs') %>
+
+<div class="container">
+	<ul>
+		<div class="row">
+			<% for (let articulo of articulos) { %>
+				<div class="col-md-4">
+					<figure class="notaportada">
+						<img src="https://i.ytimg.com/vi/czicjXRQO50/hqdefault.jpg"/>
+						<div class="fecha">
+							<span class="dia"><%= articulo.dia %></span>
+							<span class="mes"><%= articulo.mes %></span>
+						</div>
+						<i class="ion-chevron-up"></i>
+						<figcaption>
+							<h3><%= articulo.titulo %></h3>
+							<h6>Por <%= articulo.autor %></h6>
+							<p><%= articulo.bajada %></p>
+							<button><%= articulo.seccion %></button>
+						</figcaption>
+						<a href="/articulo/<%= articulo._id %>"></a>
+					</figure>
+				</div>
+			<% } %>
+		</div>	
+	</ul>
+</div>
